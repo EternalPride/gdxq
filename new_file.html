@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+		/*	position: relative;*/
+			}
+			#c{
+				width: 50px;
+				height: 50px;
+				
+				border-radius:50% ;
+				position: absolute;
+				
+				background: aquamarine;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="c"></div>
+	</body>
+	<script type="text/javascript">
+		var oym=document.getElementById("c");
+		var t2;
+		function move()
+		{
+			oym.style.left=oym.offsetLeft+2+"px";
+			if(oym.offsetLeft>=600)
+			{
+				clearInterval(t1);
+				t2=setInterval(move1,30);
+			}
+		}
+	
+			function move1()
+		  {
+				oym.style.left=oym.offsetLeft-2+"px";
+				if(oym.offsetLeft<0)
+			  {
+				clearInterval(t2);
+				t1=setInterval(move,30);
+			   }
+		  }
+		 var t1=setInterval(move,30);
+	</script>
+</html>
